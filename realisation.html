@@ -1,0 +1,23 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Réalisation | Cabinet d'Architecture Iratene Sofiane</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="page-hero"><p id="cat"></p><h1 id="t"></h1></div>
+<section><div class="wrap narrow" id="d"></div></section>
+<script src="js/layout.js"></script><script src="js/projets.js"></script>
+<script>
+const p=PROJETS.find(x=>x.id===new URLSearchParams(location.search).get('id'))||PROJETS[0];
+document.title=p.t+' | Cabinet d\'Architecture Iratene Sofiane';
+cat.textContent=p.cat;t.textContent=p.t;
+const facts=[['Type',p.type],['Année',p.an],['Maître d\'ouvrage / client',p.client],['Mission',p.mission],['Lieu',p.lieu],...(p.facts||[])].filter(x=>x[1]);
+d.innerHTML=`<div class="gal"><img class="main" id="m" src="img/${p.img[0]}.jpg" alt="${p.t}">
+${p.img.length>1?`<div class="thumbs">${p.img.map((i,k)=>`<img src="img/${i}.jpg" alt="" class="${k?'':'on'}">`).join('')}</div>`:''}</div>
+<p style="margin-top:1rem">${p.txt}</p>
+<div class="facts">${facts.map(([a,b])=>`<div><small>${a}</small>${b}</div>`).join('')}</div>
+${p.pts?`<ul class="steps">${p.pts.map(x=>`<li>${x}</li>`).join('')}</ul>`:''}
+<p style="margin-top:1.2rem"><a class="btn dark" href="devis.html">Un projet similaire ? Devis</a> <a class="btn" style="color:var(--navy)" href="realisations.html">← Toutes les réalisations</a></p>`;
+d.querySelectorAll('.thumbs img').forEach(i=>i.onclick=()=>{m.src=i.src;d.querySelectorAll('.thumbs img').forEach(x=>x.classList.toggle('on',x===i))});
+</script>
+</body></html>

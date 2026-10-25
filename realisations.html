@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Réalisations | Cabinet d'Architecture Iratene Sofiane</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="page-hero"><p>Nos réalisations</p><h1>Équipements, résidentiel, aménagements</h1></div>
+<section><div class="wrap">
+  <div class="filters" id="f"></div>
+  <div class="grid" id="grid"></div>
+</div></section>
+<script src="js/layout.js"></script><script src="js/projets.js"></script>
+<script>
+const cats=['Tous',...CATS],f=document.getElementById('f'),g=document.getElementById('grid');
+function show(c){
+  f.innerHTML=cats.map(x=>`<button class="${x===c?'on':''}">${x}</button>`).join('');
+  f.querySelectorAll('button').forEach(b=>b.onclick=()=>show(b.textContent));
+  g.innerHTML=PROJETS.filter(p=>c==='Tous'||p.cat===c).map(p=>`<a href="realisation.html?id=${p.id}"><figure><img src="img/${p.img[0]}.jpg" alt="${p.t}" loading="lazy"><figcaption><span class="tag">${p.cat}</span><b>${p.t}</b>${p.an}${p.an&&p.lieu?' · ':''}${p.lieu}</figcaption></figure></a>`).join('');
+}
+show('Tous');
+</script>
+</body></html>

@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Demande de devis | Cabinet d'Architecture Iratene Sofiane</title>
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="page-hero"><p>Devis gratuit</p><h1>Décrivez-nous votre projet</h1></div>
+<section><div class="wrap narrow">
+  <p class="lead">Remplissez ce formulaire : nous revenons vers vous avec une première analyse. Joignez ensuite vos documents (acte, plan de situation, photos) dans votre message e-mail ou WhatsApp.</p>
+  <form id="f" data-subject="Demande de devis">
+    <div class="two">
+      <label>Nom et prénom *<input name="nom" required></label>
+      <label>Téléphone *<input name="tel" type="tel" required placeholder="05 XX XX XX XX"></label>
+      <label>E-mail *<input name="email" type="email" required></label>
+      <label>Wilaya *<select name="wilaya" required><option value="">Sélectionnez…</option></select></label>
+      <label class="full">Adresse / localisation du projet<input name="adresse" placeholder="Commune, quartier, lien Google Maps…"></label>
+      <label>Nature de la mission *<select name="mission" required><option value="">Sélectionnez…</option><option>Études et conception</option><option>Modélisation 3D</option><option>Aménagement extérieur</option><option>Architecture intérieure et décoration</option><option>Suivi et contrôle des travaux</option><option>Réhabilitation / extension</option><option>Relevé et permis de régularisation</option><option>Consultation / conseil</option><option>Autre</option></select></label>
+      <label>Type de projet *<select name="type" required><option value="">Sélectionnez…</option><option>Villa / habitat individuel</option><option>Immeuble d'habitation</option><option>Bloc administratif / bureaux</option><option>Local commercial</option><option>Équipement public</option><option>Aménagement intérieur</option><option>Autre</option></select></label>
+      <label>Surface du terrain (m²)<input name="terrain" type="number" min="0"></label>
+      <label>Budget approximatif (DA)<input name="budget"></label>
+      <label class="full">Description du projet *<textarea name="description" rows="5" required placeholder="Ex : villa R+2, 4 chambres, jardin…"></textarea></label>
+    </div>
+    <div class="btns"><button class="btn dark">Envoyer par e-mail</button><button type="button" class="btn wa" data-wa>Envoyer par WhatsApp</button></div>
+  </form>
+</div></section>
+<script src="js/layout.js"></script>
+<script>
+const W="Adrar,Chlef,Laghouat,Oum El Bouaghi,Batna,Béjaïa,Biskra,Béchar,Blida,Bouira,Tamanrasset,Tébessa,Tlemcen,Tiaret,Tizi Ouzou,Alger,Djelfa,Jijel,Sétif,Saïda,Skikda,Sidi Bel Abbès,Annaba,Guelma,Constantine,Médéa,Mostaganem,M'Sila,Mascara,Ouargla,Oran,El Bayadh,Illizi,Bordj Bou Arréridj,Boumerdès,El Tarf,Tindouf,Tissemsilt,El Oued,Khenchela,Souk Ahras,Tipaza,Mila,Aïn Defla,Naâma,Aïn Témouchent,Ghardaïa,Relizane,Timimoun,Bordj Badji Mokhtar,Ouled Djellal,Béni Abbès,In Salah,In Guezzam,Touggourt,Djanet,El M'Ghair,El Menia,Aflou,Barika,Ksar Chellala,Messaad,Aïn Oussara,Bou Saâda,El Abiodh Sidi Cheikh,El Kantara,Bir El Ater,Ksar El Boukhari,El Aricha".split(',');
+document.querySelector('[name=wilaya]').insertAdjacentHTML('beforeend',W.map((w,i)=>`<option>${i+1}-${w}</option>`).join(''));
+</script>
+</body></html>

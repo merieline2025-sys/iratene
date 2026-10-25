@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="fr"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Cabinet d'Architecture Iratene Sofiane | Architecte à Alger</title>
+<meta name="description" content="Cabinet d'Architecture Iratene Sofiane, Draria, Alger : études, conception, modélisation 3D, aménagement et suivi de travaux.">
+<link rel="stylesheet" href="css/style.css">
+</head><body>
+<div class="hero">
+  <h1>L'architecture, <em>une manière d'être</em></h1>
+  <p>Cabinet d'Architecture Iratene Sofiane : études, conception et suivi de vos projets à Alger, dans une dimension humaine et environnementale.</p>
+  <div class="btns"><a class="btn lime" href="devis.html">Demander un devis</a><a class="btn" href="realisations.html">Voir nos réalisations</a></div>
+</div>
+
+<section><div class="wrap split">
+  <div class="txt">
+    <h2>Notre bureau</h2>
+    <p>Le Cabinet d'Architecture Iratene Sofiane est un bureau d'étude agréé, inscrit au tableau national de l'ordre des architectes algériens.</p>
+    <p>Depuis sa création le 18 novembre 2015, le but de l'équipe est la pratique de l'architecture dans sa dimension humaine et environnementale : construction neuve, extension ou réaménagement de bâtiments anciens, avec une prestation à la fois esthétique, respectueuse du bien-être des occupants et conforme aux réglementations en vigueur.</p>
+    <p style="margin-top:1rem"><a class="btn dark" href="agence.html">Découvrir l'agence</a></p>
+  </div>
+  <img src="img/centre-1.jpg" alt="Centre d'affaires, El Hamma">
+</div></section>
+
+<section class="dark-s"><div class="wrap stats">
+  <div><b>16 ans</b><span>d'expérience</span></div>
+  <div><b>2015</b><span>création du cabinet</span></div>
+  <div><b>2D · 3D</b><span>plans et modélisation</span></div>
+  <div><b>Agréé</b><span>ordre des architectes algériens</span></div>
+</div></section>
+
+<section class="alt"><div class="wrap">
+  <h2>Nos services</h2><p class="lead">Un panel complet de services d'architecte pour vous conseiller sur tous vos projets.</p>
+  <div class="cards">
+    <div class="card"><b>01</b><h3>Études et conception</h3><p>Habitats individuels, collectifs et équipements publics sur mesure.</p></div>
+    <div class="card"><b>02</b><h3>Modélisation 3D</h3><p>Visualisez votre projet avant sa réalisation.</p></div>
+    <div class="card"><b>03</b><h3>Suivi des travaux</h3><p>Suivi et contrôle de l'exécution des travaux de construction.</p></div>
+    <div class="card"><b>04</b><h3>Aménagements</h3><p>Architecture intérieure, décoration et espaces extérieurs.</p></div>
+  </div>
+  <p style="margin-top:1.2rem"><a class="btn dark" href="services.html">Tous nos services</a></p>
+</div></section>
+
+<section><div class="wrap">
+  <h2>Réalisations</h2><p class="lead">Une sélection de nos projets.</p>
+  <div class="grid" id="grid"></div>
+  <p style="margin-top:1.2rem"><a class="btn dark" href="realisations.html">Toutes les réalisations</a></p>
+</div></section>
+
+<section class="alt"><div class="wrap center">
+  <p class="quote" style="border:0;padding:0;margin:0 0 1rem">«L'architecture dépasse le simple acte de construire. C'est une manière d'être.»</p>
+  <a class="btn dark" href="devis.html">Parlons de votre projet</a>
+</div></section>
+
+<script src="js/layout.js"></script><script src="js/projets.js"></script>
+<script>
+document.getElementById('grid').innerHTML=[0,1,4].map(i=>{const p=PROJETS[i];return `<a href="realisation.html?id=${p.id}"><figure><img src="img/${p.img[0]}.jpg" alt="${p.t}"><figcaption><span class="tag">${p.cat}</span><b>${p.t}</b>${p.an}</figcaption></figure></a>`}).join('');
+</script>
+</body></html>
